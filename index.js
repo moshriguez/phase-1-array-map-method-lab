@@ -12,5 +12,24 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(phrase => {
+    phrase = phrase.split(' ').map(word => (word.charAt(0).toUpperCase() + word.slice(1)));
+    return phrase.join(' ');
+  })
 }
+console.log(titleCased(tutorials));
+// const titleCased = arr => {
+//   return arr.map(phrase => {
+//     phrase = phrase.split(' ').map(word => (word.charAt(0).toUpperCase() + word.slice(1)));
+//     return phrase.join(' ');
+//   })
+// }
+
+// const titleCased = (tutorials) => {
+//   return tutorials.map(phrase => titleCase(phrase))
+// }
+
+// function titleCase(str) {
+//   str = str.toLowerCase().split(' ').map(word => (word.charAt(0).toUpperCase() + word.slice(1)));
+//   return str.join(' ');
+// }
